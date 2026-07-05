@@ -105,6 +105,37 @@ a{text-decoration:none;color:inherit}
 .sparkle{position:absolute;font-size:clamp(24px,4vw,40px);animation:twinkle 1.4s ease-in-out infinite}
 .sparkle.s1{top:16%;left:22%}.sparkle.s2{top:22%;right:20%;animation-delay:.3s}.sparkle.s3{bottom:26%;left:26%;animation-delay:.6s}.sparkle.s4{bottom:20%;right:24%;animation-delay:.9s}
 @keyframes twinkle{0%,100%{transform:scale(.7);opacity:.5}50%{transform:scale(1.2);opacity:1}}
+/* battle result */
+.cheer-scene.battlewin{background:radial-gradient(circle at 50% 42%,#2E7D5B,#0B2A1E)}
+.cheer-scene.battlelose{background:radial-gradient(circle at 50% 42%,#3A3A52,#14141F)}
+.wiggle-char{width:min(42vw,300px);animation:wiggle .55s ease-in-out infinite}
+.wiggle-char svg{width:100%;height:auto;display:block;filter:drop-shadow(0 14px 30px rgba(0,0,0,.5))}
+@keyframes wiggle{0%,100%{transform:rotate(-6deg) translateY(0)}25%{transform:rotate(6deg) skewX(4deg)}50%{transform:rotate(-5deg) translateY(-12px)}75%{transform:rotate(5deg) skewX(-4deg)}}
+
+/* ===== FRIENDS / BATTLE ===== */
+.share-card{background:linear-gradient(135deg,#2B2570,#5A3FA0);border-radius:var(--r);padding:18px 20px;color:#fff;margin-bottom:18px}
+.share-card .sc-t{font-size:15px;font-weight:800;margin-bottom:4px}
+.share-card .sc-s{font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:12px}
+.share-row{display:flex;gap:8px;flex-wrap:wrap}
+.share-input{flex:1;min-width:180px;padding:9px 12px;border:none;border-radius:10px;font-size:12px;font-family:inherit;color:var(--tx);background:rgba(255,255,255,.92)}
+.friend-card{display:flex;align-items:center;gap:13px;background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:var(--sh)}
+.friend-av{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.friend-info{flex:1;min-width:0}
+.friend-nm{font-size:14px;font-weight:700}
+.friend-meta{font-size:11.5px;color:var(--tx2);margin-top:2px}
+.friend-study{font-size:11.5px;color:var(--bio);font-weight:700}
+.battle-btn{padding:9px 16px;border:none;border-radius:11px;background:linear-gradient(135deg,#EF5656,#F5853F);color:#fff;font-size:12.5px;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;box-shadow:0 4px 12px rgba(239,86,86,.35)}
+.battle-btn:hover{filter:brightness(1.05)}
+.battle-btn:disabled{background:var(--bd);color:var(--tx3);cursor:default;box-shadow:none}
+/* home friends mini */
+.home-friends{background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:14px 16px;box-shadow:var(--sh)}
+.hf-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.hf-row:last-child{border-bottom:none}
+.hf-av{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hf-nm{font-size:12.5px;font-weight:700;flex:1;min-width:0}
+.hf-st{font-size:12px;font-weight:700;color:var(--bio)}
+/* pending friend prompt (reuse gate) */
+.pf-av{width:56px;height:56px;border-radius:16px;margin:0 auto 8px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center}
 
 /* ===== MAIN ===== */
 #main{flex:1;overflow-y:auto;display:flex;flex-direction:column;min-width:0}
@@ -325,6 +356,7 @@ a{text-decoration:none;color:inherit}
 <symbol id="i-timer" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="11" r="6.5"/><path d="M10 11V7.5M8 2.5H12"/></symbol>
 <symbol id="i-dna" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 3C6 7 14 8 14 12S6 17 6 17M14 3C14 7 6 8 6 12S14 17 14 17"/><path d="M7 5.5H13M7.5 8H12.5M7.5 12H12.5M7 14.5H13"/></symbol>
 <symbol id="i-furya" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="10" cy="11" rx="6" ry="6.5"/><path d="M5 8C3.5 9 3 13 4.5 16M15 8C16.5 9 17 13 15.5 16" stroke-linecap="round"/><circle cx="8" cy="10.5" r=".7" fill="currentColor"/><circle cx="12" cy="10.5" r=".7" fill="currentColor"/></symbol>
+<symbol id="i-friends" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7.5" cy="7" r="3"/><circle cx="14" cy="8" r="2.4"/><path d="M2.5 16c0-2.8 2.2-4.5 5-4.5s5 1.7 5 4.5M13 12c2.3 0 4.5 1.3 4.5 4" stroke-linecap="round"/></symbol>
 </svg>
 
 <div style="display:flex;height:100vh;width:100%">
@@ -349,6 +381,7 @@ a{text-decoration:none;color:inherit}
     <div class="sb-item" data-view="house"><svg class="sb-icon"><use href="#i-house"/></svg><span>メェだいの家</span></div>
     <div class="sb-item" data-view="meidai"><svg class="sb-icon"><use href="#i-sheep"/></svg><span>メェだい図鑑</span></div>
     <div class="sb-item" data-view="furya"><svg class="sb-icon"><use href="#i-furya"/></svg><span>ふりゃあ図鑑</span><span class="sb-badge" id="bdg-furya"></span></div>
+    <div class="sb-item" data-view="friends"><svg class="sb-icon"><use href="#i-friends"/></svg><span>友達・バトル</span><span class="sb-badge" id="bdg-friends"></span></div>
     <div class="sb-item" data-view="exams"><svg class="sb-icon"><use href="#i-doc"/></svg><span>過去問チェック</span></div>
   </nav>
 
@@ -813,6 +846,8 @@ function loadState(){
   st.furyaBorn=st.furyaBorn||false;// メェだいが卵を産んでふりゃあ誕生したか
   st.seenFurya=st.seenFurya??-1;   // 見たふりゃあ段階（-1=未誕生）
   st.cheer=st.cheer||{};           // {dateStr:その日に出した最大ティア}
+  st.friends=st.friends||[];       // [{id,name,mp,sm,d}] 友達スナップショット
+  st.battles=st.battles||{};       // {friendId:{date,result,my,fr}} 1日1回バトル
   // 学習プランを「来週の月曜」開始へ移行（チェック進捗は保持）。v2で日付ズレも補正
   if(st.startShift!==2){st.startDate=nextMonday();st.startShift=2;}
   return st;
@@ -869,6 +904,50 @@ function isFuryaBorn(){return S.furyaBorn||meidaiPct()>=FURYA_BIRTH;}
 function furyaPct(){return Math.round((examItemsPct()+quizPct()+studyPct())/3);}
 function furyaMaxed(){return yearsCompleted()>=EXAMS.length && quizDays()>=30 && studyHours()>=500;}
 function furyaStage(){if(furyaMaxed())return 4;const p=furyaPct();if(p>=66)return 3;if(p>=40)return 2;if(p>=15)return 1;return 0;}
+
+/* ---------- 友達・教科書殴り合いバトル ---------- */
+function todayStudyMin(){return S.study[todayStr()]||0;}
+function b64e(obj){return btoa(unescape(encodeURIComponent(JSON.stringify(obj)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function b64d(str){try{str=str.replace(/-/g,'+').replace(/_/g,'/');return JSON.parse(decodeURIComponent(escape(atob(str))));}catch(e){return null;}}
+function myFriendData(){return {v:1,id:currentAccountId(),name:acctName(),mp:meidaiPct(),sm:todayStudyMin(),d:todayStr()};}
+function shareBase(){return location.origin+location.pathname;}
+function myShareLink(){return shareBase()+'#f='+b64e(myFriendData());}
+function upsertFriend(o){
+  if(!o||!o.id||o.id===currentAccountId())return false;
+  const i=S.friends.findIndex(f=>f.id===o.id);
+  const rec={id:o.id,name:o.name||'ともだち',mp:o.mp||0,sm:o.sm||0,d:o.d||todayStr()};
+  if(i>=0)S.friends[i]=rec; else S.friends.push(rec);
+  saveState();return true;
+}
+let pendingFriend=null;
+function checkIncomingFriend(){
+  const m=(location.hash||'').match(/[#&]f=([^&]+)/);
+  if(!m)return;
+  const o=b64d(m[1]);
+  history.replaceState(null,'',location.pathname+location.search); // URLからトークン除去
+  if(o&&o.id&&o.id!==currentAccountId())pendingFriend=o;
+}
+function acceptPendingFriend(){if(pendingFriend){upsertFriend(pendingFriend);const n=pendingFriend.name;pendingFriend=null;document.getElementById('gate').classList.add('hidden');switchView('friends');toast(`${n} を友達に追加したメェ！🤝`);}}
+function dismissPendingFriend(){pendingFriend=null;document.getElementById('gate').classList.add('hidden');render();}
+function copyShareLink(){
+  const url=myShareLink();
+  const done=()=>toast('自分のリンクをコピーしたメェ！友達に送ってね📨');
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(()=>prompt('このリンクをコピーして友達に送ってね',url));}
+  else prompt('このリンクをコピーして友達に送ってね',url);
+}
+/* バトル：育成度が高い方が60%で勝つ。1日1回。 */
+function canBattle(fid){const b=S.battles[fid];return !b||b.date!==todayStr();}
+function doBattle(fid){
+  const fr=S.friends.find(f=>f.id===fid);if(!fr)return;
+  if(!canBattle(fid)){toast('このバトルは今日はもう挑戦したメェ（1日1回）');return;}
+  const my=meidaiPct(), op=fr.mp||0;
+  let iWin;
+  if(my===op)iWin=Math.random()<0.5;
+  else{const favored=my>op; const higherWins=Math.random()<0.60; iWin=favored?higherWins:!higherWins;}
+  S.battles[fid]={date:todayStr(),result:iWin?'win':'lose',my,fr:op};
+  saveState();
+  showBattleResult(iWin,fr,my,op);
+}
 function subjPct(subj){const ts=TOPICS.filter(t=>t.subj===subj);let d=0,tot=0;ts.forEach(t=>{const c=topicCount(t.id);d+=c.done;tot+=c.total});return tot?Math.round(d/tot*100):0;}
 function subjRemain(subj){return TOPICS.filter(t=>t.subj===subj&&!topicFull(t.id)).length;}
 function totalPct(){let d=0,tot=0;TOPICS.forEach(t=>{const c=topicCount(t.id);d+=c.done;tot+=c.total});return tot?Math.round(d/tot*100):0;}
@@ -1041,6 +1120,73 @@ function showCheer(tier,hrs){
 }
 function hideCheer(){document.getElementById('cheer').className='hidden';}
 
+/* ===== バトル勝利の祝福キャラ（2人・ランダム／体をグネグネ） ===== */
+function battleCharSVG(which){
+  const skin='#F1D0AE',skinSh='#E0B58F',mouth='#B5675E',teeth='#fff',blush='#F4A7A0';
+  if(which===0){ // マイクを持つ先生（水色チェックシャツ・笑顔）
+    const hair='#3A342E',shirt='#BFE0F0',shirtL='#8FBFDA',gold='#B9A24B',mic='#3A3E45';
+    return `<svg viewBox="0 0 200 220">
+      <path d="M34 220 Q34 150 74 140 L126 140 Q166 150 166 220 Z" fill="${shirt}"/>
+      <g stroke="${shirtL}" stroke-width="2" opacity=".8"><path d="M60 150 V214 M100 150 V214 M140 150 V214 M46 168 H160 M46 190 H160"/></g>
+      <path d="M86 140 L100 158 L114 140 Z" fill="#fff"/>
+      <rect x="88" y="120" width="24" height="26" rx="9" fill="${skin}"/>
+      <ellipse cx="100" cy="84" rx="45" ry="47" fill="${skin}" stroke="${skinSh}" stroke-width="1.5"/>
+      <circle cx="56" cy="88" r="8" fill="${skin}"/><circle cx="144" cy="88" r="8" fill="${skin}"/>
+      <path d="M56 78 Q52 40 100 36 Q148 40 144 78 Q140 56 128 54 Q116 60 100 56 Q84 60 72 54 Q60 56 56 78Z" fill="${hair}"/>
+      <g fill="none" stroke="${gold}" stroke-width="2.6"><rect x="63" y="80" width="30" height="20" rx="8"/><rect x="107" y="80" width="30" height="20" rx="8"/><path d="M93 88 h14"/></g>
+      <path d="M70 74 q10 -4 18 1" stroke="${hair}" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M112 75 q10 -5 18 -1" stroke="${hair}" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M72 88 q6 5 12 0" stroke="#2A2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M116 88 q6 5 12 0" stroke="#2A2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="63" cy="104" r="7" fill="${blush}" opacity=".5"/><circle cx="137" cy="104" r="7" fill="${blush}" opacity=".5"/>
+      <path d="M82 108 Q100 128 118 108 Q108 118 100 118 Q92 118 82 108Z" fill="${mouth}"/><path d="M85 110 Q100 116 115 110" fill="${teeth}"/>
+      <g transform="rotate(-18 70 150)"><rect x="60" y="96" width="15" height="52" rx="7" fill="${mic}"/><circle cx="67" cy="94" r="13" fill="#565B63"/><circle cx="67" cy="94" r="9" fill="#20232A"/></g>
+      <ellipse cx="150" cy="150" rx="13" ry="17" fill="${skin}" stroke="${skinSh}" stroke-width="1.5" transform="rotate(20 150 150)"/>
+    </svg>`;
+  }
+  // 若い男性（濃い髪・グレースーツ・ストライプネクタイ）
+  const hair='#1B1712',suit='#6E747E',suitD='#575D66',shirtW='#F4F5F7',tie='#2C3550',tieL='#5566A0';
+  return `<svg viewBox="0 0 200 220">
+    <path d="M32 220 Q32 148 72 138 L128 138 Q168 148 168 220 Z" fill="${suit}"/>
+    <path d="M80 138 L100 150 L120 138 L120 152 L100 168 L80 152 Z" fill="${shirtW}"/>
+    <path d="M100 150 L108 156 L104 210 L96 210 L92 156 Z" fill="${tie}"/>
+    <g stroke="${tieL}" stroke-width="3" opacity=".7"><path d="M93 160 l14 8 M92 172 l16 9 M93 186 l14 8 M95 198 l10 6"/></g>
+    <path d="M84 140 L74 210 L92 152 Z" fill="${suitD}"/><path d="M116 140 L126 210 L108 152 Z" fill="${suitD}"/>
+    <rect x="88" y="120" width="24" height="26" rx="9" fill="${skin}"/>
+    <ellipse cx="100" cy="84" rx="45" ry="47" fill="${skin}" stroke="${skinSh}" stroke-width="1.5"/>
+    <circle cx="56" cy="88" r="8" fill="${skin}"/><circle cx="144" cy="88" r="8" fill="${skin}"/>
+    <path d="M55 90 Q50 32 100 28 Q150 32 145 90 Q142 58 128 52 Q118 66 108 56 Q102 52 96 56 Q88 66 74 54 Q59 58 55 90Z" fill="${hair}"/>
+    <path d="M74 52 Q100 44 120 58" stroke="#000" stroke-width="0" fill="none"/>
+    <g fill="none" stroke="#2A2320" stroke-width="2.4"><path d="M70 76 q10 -3 20 0"/><path d="M110 76 q10 -3 20 0"/></g>
+    <circle cx="82" cy="90" r="4.5" fill="#20222E"/><circle cx="118" cy="90" r="4.5" fill="#20222E"/>
+    <circle cx="83.5" cy="88.5" r="1.5" fill="#fff"/><circle cx="119.5" cy="88.5" r="1.5" fill="#fff"/>
+    <path d="M100 94 v8" stroke="${skinSh}" stroke-width="2" stroke-linecap="round"/>
+    <path d="M88 112 q12 6 24 0" stroke="${mouth}" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </svg>`;
+}
+function showBattleResult(iWin,fr,my,op){
+  document.getElementById('evoOverlay').classList.add('hidden');
+  const c=document.getElementById('cheer');
+  if(iWin){
+    const who=Math.random()<0.5?0:1;
+    c.innerHTML=`<div class="cheer-scene battlewin" onclick="hideCheer()">
+      <div class="sparkle s1">🎉</div><div class="sparkle s2">✨</div><div class="sparkle s3">🎊</div><div class="sparkle s4">✨</div>
+      <div class="cheer-title" style="color:#FFE06B">教科書殴り合いバトル 勝利！</div>
+      <div class="wiggle-char">${battleCharSVG(who)}</div>
+      <div class="cheer-bubble">${fr.name} に勝利！（育成度 ${my}% vs ${op}%）<br>よくやった！グネグネ〜！！ 🎓</div>
+      <button class="cheer-x" onclick="hideCheer()">やった！</button>
+    </div>`;
+    c.className='';fireConfetti();setTimeout(fireConfetti,500);
+  }else{
+    c.innerHTML=`<div class="cheer-scene battlelose" onclick="hideCheer()">
+      <div class="cheer-title" style="color:#C9C8E0;text-shadow:none">惜敗…</div>
+      <div class="cheer-bubble">${fr.name} に敗北（育成度 ${my}% vs ${op}%）。<br>メェだいを育てて明日リベンジだ！💪</div>
+      <button class="cheer-x" onclick="hideCheer()">くやしい！</button>
+    </div>`;
+    c.className='';
+  }
+}
+
 /* 小テスト：今日の問題を日付から決定的に選ぶ（4問・科目バランス） */
 function dayKey(){return new Date(todayStr()).getTime();}
 function seededIdx(seed,mod){let x=Math.sin(seed)*10000;return Math.floor((x-Math.floor(x))*mod);}
@@ -1193,6 +1339,17 @@ function renderHome(){
       </div>
       <div class="qb-streak"><b>${isFuryaBorn()?furyaPct()+'%':meidaiPct()+'%'}</b><span>${isFuryaBorn()?'ふりゃあ育成':'メェだい育成'}</span></div>
     </div>
+
+    ${S.friends.length?`
+    <div class="sec-hd">🤝 友達の勉強時間 <span class="pill">${S.friends.length}人</span></div>
+    <div class="home-friends">
+      ${S.friends.map(f=>`<div class="hf-row">
+        <div class="hf-av">${(f.name[0]||'?').toUpperCase()}</div>
+        <div class="hf-nm">${f.name} <span style="color:var(--tx3);font-weight:500">育成度 ${f.mp}%</span></div>
+        <div class="hf-st">${(f.sm/60).toFixed(1)}h${f.d===todayStr()?'':' <span style="color:var(--tx3);font-weight:500;font-size:10.5px">('+f.d+')</span>'}</div>
+        <button class="battle-btn" style="padding:6px 12px;font-size:11.5px" ${canBattle(f.id)?'':'disabled'} onclick="event.stopPropagation();doBattle('${f.id}')">${canBattle(f.id)?'⚔':'済'}</button>
+      </div>`).join('')}
+    </div>`:''}
 
     <div class="sec-hd">📅 ${started?'今週のタスク':'第1週のタスク（来週スタート）'} <span class="pill">第${cw}週・${fmtDate(weekDue(cw))}まで</span></div>
     ${thisWeek.map(t=>topicRowHTML(t,false)).join('')}
@@ -1515,8 +1672,45 @@ function renderFurya(){
   </div>`;
 }
 
+function friendStudyLabel(f){
+  const h=(f.sm/60).toFixed(1);
+  if(f.d===todayStr())return `今日の勉強 ${h}時間`;
+  return `勉強 ${h}時間（${f.d} 時点）`;
+}
+function renderFriends(){
+  const link=myShareLink();
+  const cards=S.friends.length?S.friends.map(f=>{
+    const can=canBattle(f.id);const b=S.battles[f.id];
+    const badge=(!can&&b)?`<span class="friend-study" style="color:${b.result==='win'?'var(--lo)':'var(--tx3)'}">${b.result==='win'?'今日 勝利🏆':'今日 敗北'}</span>`:'';
+    return `<div class="friend-card">
+      <div class="friend-av">${(f.name[0]||'?').toUpperCase()}</div>
+      <div class="friend-info"><div class="friend-nm">${f.name}</div>
+        <div class="friend-meta">育成度 ${f.mp}% ・ <span class="friend-study">${friendStudyLabel(f)}</span></div>${badge}</div>
+      <button class="battle-btn" ${can?'':'disabled'} onclick="doBattle('${f.id}')">${can?'⚔ バトル':'今日は挑戦済'}</button>
+    </div>`;
+  }).join(''):`<div class="note">まだ友達がいないメェ。上の「リンクをコピー」を友達に送って、相手がリンクを開くと友達に追加されるよ🤝</div>`;
+  return `
+  <div class="main-hd"><div>
+    <div class="greeting">🤝 友達・教科書殴り合いバトル</div>
+    <div class="greeting-sub">リンクを共有して友達を追加。1日1回バトルで対戦（育成度が高い方が有利＝勝率60%）。</div>
+  </div></div>
+  <div class="view-pad">
+    <div class="share-card">
+      <div class="sc-t">📨 自分のリンクを友達に送る</div>
+      <div class="sc-s">このリンクを送って相手が開くと、あなた（${acctName()}）が友達に追加されます。あなたも友達のリンクを開くと相手が追加されます（お互いに送り合ってね）。<br>※ 相手に表示される勉強時間はリンクを作った時点の記録です。最新にするには送り直してね。</div>
+      <div class="share-row">
+        <input class="share-input" id="shareInput" readonly value="${link}" onclick="this.select()"/>
+        <button class="btn btn-p" onclick="copyShareLink()">リンクをコピー</button>
+      </div>
+    </div>
+    <div class="sec-hd">友達 <span class="pill">${S.friends.length}人</span></div>
+    ${cards}
+  </div>`;
+}
+
 /* ---------- レンダリング本体 ---------- */
 function render(){
+  if(pendingFriend){showFriendPrompt();}
   // sidebar mini meidai
   const stage=currentStage();
   document.getElementById('sbMeidaiSvg').innerHTML=meidaiSVG(stage);
@@ -1528,6 +1722,7 @@ function render(){
   Object.keys(SUBJECTS).forEach(k=>{const b=document.getElementById('bdg-'+k);if(b)b.textContent=subjRemain(k)||'✓';});
   const bq=document.getElementById('bdg-quiz');if(bq)bq.textContent=S.dailyDone[todayStr()]?'✓':'!';
   const bf=document.getElementById('bdg-furya');if(bf)bf.textContent=isFuryaBorn()?(furyaMaxed()?'👑':'🐾'):'🥚';
+  const bfr=document.getElementById('bdg-friends');if(bfr)bfr.textContent=S.friends.length||'';
   // main
   const m=document.getElementById('main');
   if(VIEW==='home')m.innerHTML=renderHome();
@@ -1537,8 +1732,22 @@ function render(){
   else if(VIEW==='house')m.innerHTML=renderHouse();
   else if(VIEW==='meidai')m.innerHTML=renderMeidai();
   else if(VIEW==='furya')m.innerHTML=renderFurya();
+  else if(VIEW==='friends')m.innerHTML=renderFriends();
   else if(VIEW==='exams')m.innerHTML=renderExams();
   else m.innerHTML=renderSubject(VIEW);
+}
+function showFriendPrompt(){
+  const g=document.getElementById('gate');const o=pendingFriend;
+  g.innerHTML=`<div class="gate-card" style="text-align:center">
+    <div class="pf-av">${(o.name[0]||'?').toUpperCase()}</div>
+    <div class="gate-title">友達申請が届いたメェ！</div>
+    <div class="gate-sub"><b>${o.name}</b> さん（育成度 ${o.mp||0}%）を友達に追加しますか？<br>追加すると、その日の勉強時間の共有と教科書バトルができるよ。</div>
+    <div class="gate-form" style="justify-content:center">
+      <button class="btn btn-p" onclick="acceptPendingFriend()">追加する</button>
+      <button class="btn btn-s" onclick="dismissPendingFriend()">あとで</button>
+    </div>
+  </div>`;
+  g.classList.remove('hidden');
 }
 
 /* ---------- アカウントゲート（名前入力／切替） ---------- */
@@ -1582,8 +1791,9 @@ function boot(){
   if(!currentAccount()){showGate('first');return;}
   hideGate();
   S=loadState();
+  checkIncomingFriend();  // 友達リンク（#f=）を検出
   checkEvolution();
-  render();
+  render();               // pendingFriend があれば友達追加プロンプト表示
 }
 document.querySelectorAll('[data-view]').forEach(el=>el.addEventListener('click',()=>switchView(el.dataset.view)));
 boot();
